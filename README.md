@@ -7,7 +7,7 @@
 </p>
 
 ## 📝 Descrizione
-Un simulatore di guida 3D costruito con **Godot Engine 4** e programmato interamente in **C#**. Il progetto permette la guida di una **sedan rossa** in giro per il comune di **san polo dei cavalieri** con i modelli 3d ufficiali di **OpenStreetMap**
+Un simulatore di guida 3D costruito con **Godot Engine 4** e programmato interamente in **C#**. Il progetto permette la guida di una **sedan rossa** in giro per il comune di **San Polo dei Cavalieri** con i modelli 3d ufficiali di **OpenStreetMap**
 
 ## 🚀 Come Avviare il Progetto
 1. Scarica il file zip
