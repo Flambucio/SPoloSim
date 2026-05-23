@@ -1,0 +1,2 @@
+# SPoloSim
+School project
