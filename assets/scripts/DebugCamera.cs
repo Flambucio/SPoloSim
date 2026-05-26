@@ -8,25 +8,21 @@ public partial class FreeLookCamera : Camera3D
 
 	public override void _Ready()
 	{
-		// Cattura il mouse per poter girare la visuale a 360 gradi senza uscire dallo schermo
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 	}
 
 	public override void _Input(InputEvent @event)
 	{
-		// Gestione della rotazione con il mouse
 		if (@event is InputEventMouseMotion mouseMotion)
 		{
 			Vector3 rot = RotationDegrees;
 			rot.X -= mouseMotion.Relative.Y * Sensitivity;
 			rot.Y -= mouseMotion.Relative.X * Sensitivity;
 			
-			// Limitiamo la rotazione verticale per evitare di ribaltare la testa
 			rot.X = Mathf.Clamp(rot.X, -89.0f, 89.0f);
 			RotationDegrees = rot;
 		}
 
-		// Tasto di emergenza: premi ESC per liberare il mouse dal gioco
 		if (Input.IsActionJustPressed("ui_cancel"))
 		{
 			Input.MouseMode = Input.MouseMode == Input.MouseModeEnum.Captured 
@@ -39,8 +35,6 @@ public partial class FreeLookCamera : Camera3D
 	{
 		float fDelta = (float)delta;
 		Vector3 direction = Vector3.Zero;
-
-		// Input per il movimento stile "Noclip" / Spettatore
 		if (Input.IsKeyPressed(Key.W)) direction -= Transform.Basis.Z;
 		if (Input.IsKeyPressed(Key.S)) direction += Transform.Basis.Z;
 		if (Input.IsKeyPressed(Key.A)) direction -= Transform.Basis.X;
